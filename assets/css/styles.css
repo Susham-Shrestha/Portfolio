@@ -249,6 +249,24 @@ img {
   width: 200px;
   border-radius: 0.5rem;
 }
+.timeline {
+  border-left: 3px solid var(--first-color);
+  padding-left: 20px;
+  margin-top: 2rem;
+}
+
+.timeline-event {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.timeline-event .date {
+  font-weight: 600;
+  color: var(--second-color);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
 
 /* ===== SKILLS =====*/
 .skills__container {
@@ -323,6 +341,21 @@ img {
 }
 .work__img img:hover {
   transform: scale(1.1);
+}
+/* Leaflet Map Styling */
+#leafletMap {
+  height: 400px; /* or 100vh for full viewport height */
+  width: 100%;
+  margin-top: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+#leafletMap {
+  background: lightgray;
+}
+#leafletMap {
+  height: 400px; /* or 100vh for full viewport height */
+  width: 100%;
 }
 
 /* ===== CONTACT =====*/

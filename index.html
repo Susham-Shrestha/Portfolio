@@ -3,9 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <!-- Leaflet CSS -->
         <link rel="stylesheet" href="assets/css/styles.css">
-
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
         <!-- =====BOX ICONS===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
@@ -25,6 +27,7 @@
                         <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                         <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#map" class="nav__link">My Location Map</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </div>
@@ -75,6 +78,24 @@
                     <div>
                         <h2 class="about__subtitle">I'am Susham Shrestha,</h2>
                         <p class="about__text">a Geomatics Engineering student at Kathmandu University from Bhaktapur. I’m into coding, videography, football, biking, and exploring new places. I enjoy blending creativity with tech—whether it’s building websites, making documentaries, or working on cool GIS projects.</p>           
+                        <div class="timeline">
+                            <div class="timeline-event">
+                              <span class="date">2021 - 2026</span>
+                              <h4>Bachelor's in Geomatics Engineering</h4>
+                              <p>Kathmandu University, Dhulikhel</p>
+                            </div>
+                            <div class="timeline-event">
+                              <span class="date">2019 - 2021</span>
+                              <h4>High School </h4>
+                              <p>Little Angels' College, Hattiban</p>
+                            </div>
+                            <div class="timeline-event">
+                                <span class="date">2005 - 2019</span>
+                                <h4>School </h4>
+                                <p>Mount Sinai English Boarding School, Bhaktapur</p>
+                            </div>
+                          </div>
+                          
                     </div>                                   
                 </div>
             </section>
@@ -170,6 +191,12 @@
                     </a>
                 </div>
             </section>
+            <!--===== MAP SECTION =====-->
+            <section class="map section" id="map">
+                <h2 class="section-title">My Location Map</h2>
+                <div id="leafletMap"></div>
+            </section>
+              
 
             <!--===== CONTACT =====-->
             <section class="contact section" id="contact">

@@ -51,37 +51,49 @@ const sr = ScrollReveal({
     delay: 200,
 //     reset: true
 });
-/*==================== SEND FORM TO EMAIL ====================*/
+
 document.addEventListener('DOMContentLoaded', () => {
+    // === FORM SUBMISSION ===
     const form = document.getElementById('contact-form');
     const message = document.getElementById('form-message');
     form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(form);
-
-        const response = await fetch(form.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
-
-        if (response.ok) {
-            message.textContent = "Thank you! Your message has been sent.";
-            message.style.color = "green";
-            form.reset();
-        } else {
-            message.textContent = "Oops! Something went wrong.";
-            message.style.color = "red";
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
         }
+      });
+      if (response.ok) {
+        message.textContent = "Thank you! Your message has been sent.";
+        message.style.color = "green";
+        form.reset();
+      } else {
+        message.textContent = "Oops! Something went wrong.";
+        message.style.color = "red";
+      }
     });
-});
+  
+    // === LEAFLET MAP ===
+    const map = L.map('leafletMap').setView([27.676410, 85.385511], 13); // Susham coordinates
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([27.676410, 85.385511]).addTo(map)
+      .bindPopup("Susham is here!")
+      .openPopup();
+
+  });
+  
 
 
-
-sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
-sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
-sr.reveal('.home__social-icon',{ interval: 200}); 
-sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+  
+  
+  sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
+  sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
+  sr.reveal('.home__social-icon',{ interval: 200}); 
+  sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
