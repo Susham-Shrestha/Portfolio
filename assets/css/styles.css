@@ -342,6 +342,42 @@ img {
 .work__img img:hover {
   transform: scale(1.1);
 }
+.work__img {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.work__img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.work__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 255, 170, 0.85); 
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.work__img:hover .work__overlay,
+.work__img:active .work__overlay {
+    opacity: 1;
+}
+
 /* Leaflet Map Styling */
 #leafletMap {
   height: 400px; /* or 100vh for full viewport height */
