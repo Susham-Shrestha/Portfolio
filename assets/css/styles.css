@@ -393,6 +393,24 @@ img {
   height: 400px; /* or 100vh for full viewport height */
   width: 100%;
 }
+/* ===== Map Controls ===== */
+.map__container {
+    text-align: center;
+}
+.map__controls {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.map__info {
+    margin-top: 1rem;
+    font-size: var(--normal-font-size);
+    color: var(--second-color);
+    font-weight: var(--font-semi);
+    text-align: center;
+}
 
 /* ===== CONTACT =====*/
 .contact__input {

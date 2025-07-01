@@ -11,6 +11,10 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <!-- =====BOX ICONS===== -->
     <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <!-- =====Turf===== -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@7/turf.min.js"></script>
+    <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
 
     <title>Susham Shrestha</title>
 </head>
@@ -29,7 +33,7 @@
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-                    <li class="nav__item"><a href="#map" class="nav__link">My Location Map</a></li>
+                    <li class="nav__item"><a href="#map" class="nav__link">Spatial Tools</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
@@ -38,6 +42,8 @@
                 <i class='bx bx-menu'></i>
             </div>
         </nav>
+    </header>
+    </nav>
     </header>
 
     <main class="l-main">
@@ -80,7 +86,7 @@
 
             <div class="about__container bd-grid">
                 <div class="about__img">
-                    <img src="assets/img/about.jpg" alt="">
+                    <img src="assets/img/about.JPG" alt="">
                 </div>
 
                 <div>
@@ -183,40 +189,39 @@
             <h2 class="section-title">Work</h2>
 
             <div class="work__container bd-grid">
-                <a href="assets/pdfs/work1.pdf" class="work__img">
+                <a href="" class="work__img">
                     <img src="assets/img/work1.jpg" alt="">
                     <div class="work__overlay">
                         <p>A GIS BASED EVACUATION ROUTE PLANNING
                             IN FLOOD-SUSCEPTIBLE AREA OF HELAMBU RURAL MUNICIPALITY</p>
                     </div>
                 </a>
-
-                <a href="https://sushamshrestha.com.np" class="work__img">
+                <a href="" class="work__img">
                     <img src="assets/img/work2.jpg" alt="">
                     <div class="work__overlay">
                         <p>PORTFOLIO WEBSITE</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/work3.pdf" class="work__img">
+                <a href="" class="work__img">
                     <img src="assets/img/work3.jpg" alt="">
                     <div class="work__overlay">
                         <p>LANDFILL SITE SELECTION IN BHAKTAPUR DISTRICT USING GIS BASED
                             ANALYTICAL HIERARCHIAL PROCEDURE</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/work4.pdf" class="work__img">
+                <a href="" class="work__img">
                     <img src="assets/img/work4.jpg" alt="">
                     <div class="work__overlay">
                         <p>A LAND USE/LAND COVER MAPS OF BHAKATPUR DISTRICT</p>
                     </div>
                 </a>
-                <a href="https://github.com/Susham-Shrestha/SurveyDataLevelingCalculatorGUI" class="work__img">
+                <a href="" class="work__img">
                     <img src="assets/img/work5.jpg" alt="">
                     <div class="work__overlay">
                         <p>SURVEY DATA LEVELLING CALCULATOR USING JAVA</p>
                     </div>
                 </a>
-                <a href="assets/pdfs/work6.pdf" class="work__img">
+                <a href="" class="work__img">
                     <img src="assets/img/work6.jpg" alt="">
                     <div class="work__overlay">
                         <p>PREPARATION OF TOPOGRAPHICAL
@@ -227,10 +232,15 @@
         </section>
         <!--===== MAP SECTION =====-->
         <section class="map section" id="map">
-            <h2 class="section-title">My Location Map</h2>
+            <h2 class="section-title">Spatial Tools</h2>
             <div id="leafletMap"></div>
+            <div class="map__controls">
+                <button id="bufferBtn" class="button">Create Buffer (1km)</button>
+                <button id="distanceBtn" class="button">Measure Distance</button>
+                <button id="areaBtn" class="button">Draw Polygon for Area</button>
+                <div id="mapInfo" class="map__info"></div>
+            </div>
         </section>
-
 
         <!--===== CONTACT =====-->
         <section class="contact section" id="contact">
